@@ -2,6 +2,8 @@ package com.gestion.stock.services;
 
 import java.util.List;
 
+
+
 import com.gestion.stock.entities.Utilisateur;
 
 public interface IUtilisateurService {

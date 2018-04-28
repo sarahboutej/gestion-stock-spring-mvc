@@ -2,26 +2,25 @@ package com.gestion.stock.services;
 
 import java.util.List;
 
-import com.gestion.stock.entities.CommandeClient;
+import com.gestion.stock.entities.CommandeFournisseur;
 
 public interface ICommandeFournisseurService {
-
 	
-	public CommandeClient save(CommandeClient entity);
+	public CommandeFournisseur save(CommandeFournisseur entity);
 
-	public CommandeClient update(CommandeClient entity);
+	public CommandeFournisseur update(CommandeFournisseur entity);
 
-	public List<CommandeClient> selectAll();
+	public List<CommandeFournisseur> selectAll();
 
-	public List<CommandeClient> selectAll(String sortField, String sort);
+	public List<CommandeFournisseur> selectAll(String sortField, String sort);
 
 	public void remove(Long id);
 
-	public CommandeClient getById(Long id);
+	public CommandeFournisseur getById(Long id);
 
-	public CommandeClient findOne(String paramName, Object paramValue);
+	public CommandeFournisseur findOne(String paramName, Object paramValue);
 
-	public CommandeClient findOne(String[] paramNames, Object[] paramValues);
+	public CommandeFournisseur findOne(String[] paramNames, Object[] paramValues);
 
 	public int findCountBy(String paramName, String paramValue);
 }
