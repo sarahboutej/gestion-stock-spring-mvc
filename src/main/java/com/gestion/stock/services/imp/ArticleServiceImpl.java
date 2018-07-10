@@ -12,7 +12,7 @@ import com.gestion.stock.services.IArticleService;
 @Transactional
 public class ArticleServiceImpl implements IArticleService{
 
-	IArticleDao articleDao=new ArticleDaoImpl();
+	private IArticleDao articleDao;
 	
 	
 	public void setArticleDao(IArticleDao articleDao) {
@@ -21,56 +21,55 @@ public class ArticleServiceImpl implements IArticleService{
 
 	@Override
 	public Article save(Article entity) {
-		// TODO Auto-generated method stub
+		
 		return articleDao.save(entity);
 	}
 
 	@Override
 	public Article update(Article entity) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return articleDao.update(entity);
 	}
 
 	@Override
 	public List<Article> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return articleDao.selectAll();
 	}
 
 	@Override
 	public List<Article> selectAll(String sortField, String sort) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return articleDao.selectAll(sortField, sort);
 	}
 
 	@Override
 	public void remove(Long id) {
-		// TODO Auto-generated method stub
+		articleDao.remove(id);
 		
 	}
 
 	@Override
 	public Article getById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return articleDao.getById(id);
 	}
 
 	@Override
 	public Article findOne(String paramName, Object paramValue) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return articleDao.findOne(paramName, paramValue);
 	}
 
 	@Override
 	public Article findOne(String[] paramNames, Object[] paramValues) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return articleDao.findOne(paramNames, paramValues);
 	}
 
 	@Override
 	public int findCountBy(String paramName, String paramValue) {
-		// TODO Auto-generated method stub
-		return 0;
+		return articleDao.findCountBy(paramName, paramValue);
 	}
 
 }

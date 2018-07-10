@@ -12,9 +12,9 @@
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/gestionStock_mvc?createDatabaseIfNotExist=true"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/gestionStock_mvc2?createDatabaseIfNotExist=true"></property>
 		<property name="username" value="root"></property>
-		<property name="password" value="root1234"></property>
+		<property name="password" value=""></property>
 	</bean>
 	
 	<bean id="persistenceUnitManger"
@@ -38,4 +38,8 @@
 	</bean>
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	<context:annotation-config></context:annotation-config>
-</beans>
+	
+	<!-- Declaration des beans-->
+	<import resource="classpath:config/beansConfig.xml"/>
+	
+	</beans>
