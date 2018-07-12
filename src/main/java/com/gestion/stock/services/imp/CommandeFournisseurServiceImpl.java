@@ -2,63 +2,85 @@ package com.gestion.stock.services.imp;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
+import com.gestion.stock.dao.ICommandeFournisseurDao;
 import com.gestion.stock.entities.CommandeClient;
+import com.gestion.stock.entities.CommandeFournisseur;
 import com.gestion.stock.services.ICommandeClientService;
+import com.gestion.stock.services.ICommandeFournisseurService;
+@Transactional
+public class CommandeFournisseurServiceImpl implements ICommandeFournisseurService{
 
-public class CommandeFournisseurServiceImpl implements ICommandeClientService{
-
-	@Override
-	public CommandeClient save(CommandeClient entity) {
-		// TODO Auto-generated method stub
-		return null;
+	private ICommandeFournisseurDao cmdFournisseurDao;
+	
+	
+	public void setCmdFournisseurDao(ICommandeFournisseurDao cmdFournisseurDao) {
+		this.cmdFournisseurDao = cmdFournisseurDao;
 	}
 
-	@Override
-	public CommandeClient update(CommandeClient entity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
-	public List<CommandeClient> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public CommandeFournisseur save(CommandeFournisseur entity) {
+		
+		return cmdFournisseurDao.save(entity);
 	}
 
+
 	@Override
-	public List<CommandeClient> selectAll(String sortField, String sort) {
-		// TODO Auto-generated method stub
-		return null;
+	public CommandeFournisseur update(CommandeFournisseur entity) {
+		
+		return cmdFournisseurDao.update(entity);
 	}
+
+
+	@Override
+	public List<CommandeFournisseur> selectAll() {
+		
+		return cmdFournisseurDao.selectAll();
+	}
+
+
+	@Override
+	public List<CommandeFournisseur> selectAll(String sortField, String sort) {
+		
+		return cmdFournisseurDao.selectAll(sortField, sort);
+	}
+
 
 	@Override
 	public void remove(Long id) {
-		// TODO Auto-generated method stub
+		cmdFournisseurDao.remove(id);
 		
 	}
 
-	@Override
-	public CommandeClient getById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
-	public CommandeClient findOne(String paramName, Object paramValue) {
-		// TODO Auto-generated method stub
-		return null;
+	public CommandeFournisseur getById(Long id) {
+		
+		return cmdFournisseurDao.getById(id);
 	}
 
+
 	@Override
-	public CommandeClient findOne(String[] paramNames, Object[] paramValues) {
-		// TODO Auto-generated method stub
-		return null;
+	public CommandeFournisseur findOne(String paramName, Object paramValue) {
+		
+		return cmdFournisseurDao.findOne(paramName, paramValue);
 	}
+
+
+	@Override
+	public CommandeFournisseur findOne(String[] paramNames, Object[] paramValues) {
+		
+		return cmdFournisseurDao.findOne(paramNames, paramValues);
+	}
+
 
 	@Override
 	public int findCountBy(String paramName, String paramValue) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return cmdFournisseurDao.findCountBy(paramName, paramValue);
 	}
 
+	
 }

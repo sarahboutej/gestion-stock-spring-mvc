@@ -4,64 +4,70 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import com.gestion.stock.dao.ICategoryDao;
 import com.gestion.stock.entities.Category;
 import com.gestion.stock.services.ICategoryService;
 
 @Transactional
 public class CategoryServiceImpl implements ICategoryService{
 
+	private ICategoryDao catDao;
+	
+	public void setCatDao(ICategoryDao catDao) {
+		this.catDao = catDao;
+	}
+
 	@Override
 	public Category save(Category entity) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return catDao.save(entity);
 	}
 
 	@Override
 	public Category update(Category entity) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return catDao.update(entity);
 	}
 
 	@Override
 	public List<Category> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return catDao.selectAll();
 	}
 
 	@Override
 	public List<Category> selectAll(String sortField, String sort) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return catDao.selectAll(sortField, sort);
 	}
 
 	@Override
 	public void remove(Long id) {
-		// TODO Auto-generated method stub
+		catDao.remove(id);
 		
 	}
 
 	@Override
 	public Category getById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return catDao.getById(id);
 	}
 
 	@Override
 	public Category findOne(String paramName, Object paramValue) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return catDao.findOne(paramName, paramValue);
 	}
 
 	@Override
 	public Category findOne(String[] paramNames, Object[] paramValues) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return catDao.findOne(paramNames, paramValues);
 	}
 
 	@Override
 	public int findCountBy(String paramName, String paramValue) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return catDao.findCountBy(paramName, paramValue);
 	}
 
 }

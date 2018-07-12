@@ -2,63 +2,72 @@ package com.gestion.stock.services.imp;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
+import com.gestion.stock.dao.IVenteDao;
 import com.gestion.stock.entities.Vente;
 import com.gestion.stock.services.IVenteService;
 
-public class VenteServiceImpl implements IVenteService{
+@Transactional
+public class VenteServiceImpl implements IVenteService {
+
+	private IVenteDao venteDao;
+
+	public void setVenteDao(IVenteDao venteDao) {
+		this.venteDao = venteDao;
+	}
 
 	@Override
 	public Vente save(Vente entity) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return venteDao.save(entity);
 	}
 
 	@Override
 	public Vente update(Vente entity) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return venteDao.update(entity);
 	}
 
 	@Override
 	public List<Vente> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return venteDao.selectAll();
 	}
 
 	@Override
 	public List<Vente> selectAll(String sortField, String sort) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return venteDao.selectAll();
 	}
 
 	@Override
 	public void remove(Long id) {
-		// TODO Auto-generated method stub
 		
+		venteDao.remove(id);
 	}
 
 	@Override
 	public Vente getById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+	
+		return venteDao.getById(id);
 	}
 
 	@Override
 	public Vente findOne(String paramName, Object paramValue) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return venteDao.findOne(paramName, paramValue);
 	}
 
 	@Override
 	public Vente findOne(String[] paramNames, Object[] paramValues) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return venteDao.findOne(paramNames, paramValues);
 	}
 
 	@Override
 	public int findCountBy(String paramName, String paramValue) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return venteDao.findCountBy(paramName, paramValue);
 	}
 
 }

@@ -2,63 +2,75 @@ package com.gestion.stock.services.imp;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
+import com.gestion.stock.dao.IFournisseurDao;
 import com.gestion.stock.entities.Fournisseur;
 import com.gestion.stock.services.IFournisseurService;
 
+@Transactional
 public class FournisseurServiceImpl implements IFournisseurService{
+
+	
+	private IFournisseurDao fournisseurDao;
+	
+	
+	public void setFournisseurDao(IFournisseurDao fournisseurDao) {
+		this.fournisseurDao = fournisseurDao;
+	}
 
 	@Override
 	public Fournisseur save(Fournisseur entity) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return fournisseurDao.save(entity);
 	}
 
 	@Override
 	public Fournisseur update(Fournisseur entity) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return fournisseurDao.update(entity);
 	}
 
 	@Override
 	public List<Fournisseur> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return fournisseurDao.selectAll();
 	}
 
 	@Override
 	public List<Fournisseur> selectAll(String sortField, String sort) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return fournisseurDao.selectAll(sortField, sort);
 	}
 
 	@Override
 	public void remove(Long id) {
-		// TODO Auto-generated method stub
+		fournisseurDao.remove(id);
 		
 	}
 
 	@Override
 	public Fournisseur getById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return fournisseurDao.getById(id);
 	}
 
 	@Override
 	public Fournisseur findOne(String paramName, Object paramValue) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return fournisseurDao.findOne(paramName, paramValue);
 	}
 
 	@Override
 	public Fournisseur findOne(String[] paramNames, Object[] paramValues) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return fournisseurDao.findOne(paramNames, paramValues);
 	}
 
 	@Override
 	public int findCountBy(String paramName, String paramValue) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return fournisseurDao.findCountBy(paramName, paramValue);
 	}
 
 }
